@@ -1,0 +1,35 @@
+
+
+import java.io.File
+import kotlin.text.toIntOrNull
+
+fun main() {
+  val inputFile = File("input.txt")
+
+  inputFile.useLines() { println(countSecretPassword(it.toList()))}
+}
+
+fun countSecretPassword(lines : List<String>): Int{
+  var password = 0
+  var current = 50;
+
+  for (line in lines) {
+    assert(line.first() == 'L' || line.first() == 'R')
+    val turnLeft = line.first() == 'L'
+    
+    assert(line.drop(1).toIntOrNull() != null)
+    val distance = line.drop(1).toInt()
+    current = turn(current, turnLeft, distance)
+
+    if (current == 0) {
+      password++
+    }  
+  }
+
+  return password
+}
+
+fun turn (current: Int, left: Boolean, distance: Int):Int {
+  val new = if (left) current - distance else current + distance
+  return new % 100  
+}

@@ -8,8 +8,12 @@ I have decided to use kotlin this year, to get more practices in the language fo
 To run each solution you have to install both kotlin and java.
 Then run this on the command line:
 
-`kotlinc main.kt -d main.jar`
+`kotlinc main.kt -include-runtime -d main.jar`
 
 This creates a `main.jar` file which can than be executed using `java`.
 
 `java -jar main.jar`
+
+Or run them in one line using
+
+`kotlinc main.kt -include-runtime -d main.jar && java -jar main.jar`
