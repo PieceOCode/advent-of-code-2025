@@ -1,4 +1,4 @@
-
+package day1.part1
 
 import java.io.File
 import kotlin.text.toIntOrNull
@@ -14,10 +14,7 @@ fun countSecretPassword(lines : List<String>): Int{
   var current = 50;
 
   for (line in lines) {
-    assert(line.first() == 'L' || line.first() == 'R')
     val turnLeft = line.first() == 'L'
-    
-    assert(line.drop(1).toIntOrNull() != null)
     val distance = line.drop(1).toInt()
     current = turn(current, turnLeft, distance)
 
