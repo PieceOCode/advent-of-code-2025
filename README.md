@@ -16,4 +16,4 @@ This creates a `main.jar` file which can than be executed using `java`.
 
 Or run them in one line using
 
-`kotlinc main.kt -include-runtime -d main.jar && java -jar main.jar`
+`kotlinc part1.kt -include-runtime -d part1.jar && java -jar part1.jar`
